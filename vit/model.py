@@ -1,10 +1,8 @@
-from tensorflow.python.keras.layers.core import Dropout
 from vit.embedding import PatchEmbedding
 from vit.encoder import TransformerEncoder
-from tensorflow.keras.layers import Dense, LayerNormalization
+from tensorflow.keras.layers import Dense, LayerNormalization, Dropout
 from tensorflow.keras.layers import Resizing, RandomFlip, RandomRotation, RandomZoom, Rescaling
-from tensorflow.keras import Sequential
-from tensorflow.keras.models import Model
+from tensorflow.keras.models import Model, Sequential
 
 
 class ViT(Model):
