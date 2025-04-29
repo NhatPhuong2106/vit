@@ -66,6 +66,9 @@ class ViT(Model):
 
         self.last_layer_norm = LayerNormalization(epsilon=norm_eps)
 
+    def build(self, input_shape):
+        super().build(input_shape)
+
     def call(self, inputs):
         # Create augmented data
         # augmented shape: (..., image_size, image_size, c)
