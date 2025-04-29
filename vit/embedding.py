@@ -61,7 +61,7 @@ class PatchEmbedding(Layer):
 
         # cls token used for last mlp network
         self.cls_token = self.add_weight(
-            "cls_token",
+            name="cls_token",
             shape=[1, 1, projection_dim],
             initializer=tf.keras.initializers.RandomNormal(),
             dtype=tf.float32
