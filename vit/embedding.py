@@ -72,7 +72,7 @@ class PatchEmbedding(Layer):
 
         # self.position_embedding shape: (..., S + 1, D)
         self.position_embedding = self.add_weight(
-            "position_embeddings",
+            name="position_embeddings",
             shape=[self.num_patches + 1, projection_dim],
             initializer=tf.keras.initializers.RandomNormal(),
             dtype=tf.float32
