@@ -3,7 +3,7 @@ from tensorflow import keras
 from tensorflow.keras.losses import SparseCategoricalCrossentropy
 from tensorflow.keras.preprocessing import image_dataset_from_directory
 from tensorflow.python.data import Dataset
-import tensorflow_addons as tfa
+from tensorflow.keras.optimizers import AdamW
 import numpy as np
 
 from argparse import ArgumentParser
@@ -113,7 +113,7 @@ if __name__ == "__main__":
     model.build(input_shape=(None, args.image_size,
                              args.image_size, args.image_channels))
 
-    optimizer = tfa.optimizers.AdamW(
+    optimizer = AdamW(
         learning_rate=args.lr, weight_decay=args.weight_decay)
     loss = SparseCategoricalCrossentropy()
     model.compile(optimizer, loss=loss,
